@@ -952,24 +952,16 @@
         }
 
 
-        if(
-          !/^01[3-9]\d{8}$/
-            .test(
-              mobile.replace(
-                /[\s-]/g,
-                ''
-              )
-            )
-        ){
+        if(!mobile){
 
-          err.textContent =
-            'Please enter a valid 11-digit Bangladeshi mobile number.';
+  err.textContent =
+    'Please enter a mobile number.';
 
-          err.style.display =
-            'block';
+  err.style.display =
+    'block';
 
-          return;
-        }
+  return;
+}
 
 
         btn.disabled =
