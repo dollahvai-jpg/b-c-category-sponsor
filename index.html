@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>B & C-Category Sponsor Challenge</title>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Baloo+Da+2:wght@600;700&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Baloo+Da+2:wght@600;700&family=Cairo:wght@400;500;600;700&display=swap');
 
   :root{
     --navy:#0f2a4a;
@@ -31,259 +34,464 @@
     color:var(--ink);
   }
 
+  /* =========================
+     MAIN WRAPPER
+  ========================= */
+
   .wrap{
     max-width:760px;
     margin:auto;
     padding-bottom:48px;
   }
 
+
+  /* =========================
+     HERO
+  ========================= */
+
   .hero{
-    background:linear-gradient(180deg,var(--navy),var(--navy2));
+    background:linear-gradient(
+      180deg,
+      var(--navy),
+      var(--navy2)
+    );
+
     color:#fff;
-    padding:32px 24px 40px;
+
+    padding:20px 24px 40px;
   }
+
+
+  /* =========================
+     LANGUAGE SWITCH
+  ========================= */
+
+  .language-row{
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:20px;
+  }
+
+  /*
+   * In Arabic/RTL mode the button moves
+   * to the opposite side, matching your
+   * screenshots.
+   */
+  html[dir="rtl"] .language-row{
+    justify-content:flex-start;
+  }
+
+  .language-btn{
+    border:0;
+    background:rgba(255,255,255,.15);
+    color:#fff;
+
+    padding:9px 15px;
+
+    border-radius:10px;
+
+    font-family:inherit;
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+      background .2s,
+      transform .2s;
+  }
+
+  .language-btn:hover{
+    background:rgba(255,255,255,.24);
+    transform:translateY(-1px);
+  }
+
+
+  /* =========================
+     HERO TEXT
+  ========================= */
 
   .eyebrow{
     font-family:'Times New Roman',serif;
-    font-size:26px;
-    line-height:1.3;
+    font-size:17px;
+    line-height:1.4;
+
+    letter-spacing:.3px;
+
     color:var(--goldl);
+
     font-weight:700;
-    margin:0 0 6px;
+
+    margin:0 0 8px;
   }
 
   .title{
     font-family:'Baloo Da 2',sans-serif;
+
     font-size:28px;
     line-height:1.3;
-    margin:0 0 6px;
+
+    margin:0 0 8px;
   }
 
   .sub{
     font-size:15px;
+
     color:#cfe0f0;
+
     margin:0;
-    line-height:1.6;
+
+    line-height:1.65;
   }
+
+
+  /* =========================
+     CARDS
+  ========================= */
 
   .card{
     background:#fff;
+
     border:1px solid var(--line);
+
     border-radius:14px;
+
     margin:20px 20px 0;
+
     padding:22px 20px;
   }
+
+
+  /* =========================
+     COUNTDOWN
+  ========================= */
 
   .cd-label,
   .list-title{
     font-size:13px;
+
     color:var(--soft);
+
     font-weight:600;
+
     margin:0 0 12px;
   }
 
   .cd-row{
     display:flex;
+
     gap:10px;
   }
 
   .cd-box{
     flex:1;
+
     background:var(--navy);
+
     color:#fff;
+
     border-radius:10px;
+
     padding:12px 4px;
+
     text-align:center;
   }
 
   .cd-num{
     font-family:'Baloo Da 2',sans-serif;
+
     font-size:26px;
+
     font-weight:700;
+
     line-height:1;
   }
 
   .cd-unit{
     font-size:11px;
+
     color:var(--goldl);
+
     margin-top:4px;
   }
 
   .deadline-note{
     font-size:12.5px;
+
     color:var(--soft);
+
     margin-top:12px;
+
     text-align:center;
   }
 
+
+  /* =========================
+     TARGET DASHBOARD
+  ========================= */
+
   .targets{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:14px;
   }
 
   .target{
     border:1px solid var(--line);
+
     border-radius:12px;
+
     padding:15px;
   }
 
   .target h2{
     margin:0;
+
     color:var(--navy);
+
     font-family:'Baloo Da 2',sans-serif;
+
     font-size:22px;
   }
 
   .score{
     font-family:'Baloo Da 2',sans-serif;
+
     font-size:31px;
+
     color:var(--maroon);
+
     font-weight:700;
   }
 
   .remain{
     color:var(--navy);
+
     font-weight:600;
   }
 
   .bar-track{
     height:12px;
+
     background:#eee4cd;
+
     border-radius:8px;
+
     overflow:hidden;
+
     margin-top:7px;
   }
 
   .bar-fill{
     height:100%;
-    background:linear-gradient(90deg,var(--gold),var(--maroon));
+
+    background:
+      linear-gradient(
+        90deg,
+        var(--gold),
+        var(--maroon)
+      );
+
     transition:width .5s;
   }
 
+
+  /* =========================
+     SPONSOR FORM
+  ========================= */
+
   .join-title{
     font-family:'Baloo Da 2',sans-serif;
+
     font-size:20px;
+
     margin:0 0 6px;
+
     color:var(--navy);
   }
 
   .join-desc{
     font-size:14px;
+
     color:var(--soft);
+
     margin:0 0 16px;
+
     line-height:1.6;
   }
 
   label{
     display:block;
+
     font-size:13px;
+
     font-weight:600;
+
     margin:10px 0 6px;
   }
 
   input,
   select{
     width:100%;
+
     padding:12px 13px;
+
     border-radius:9px;
+
     border:1px solid var(--line);
+
     font-family:inherit;
+
     font-size:15px;
+
     background:#fff;
   }
 
   input:focus,
   select:focus{
     outline:none;
+
     border-color:var(--gold);
   }
 
   .btn{
     width:100%;
+
     padding:13px;
+
     border:0;
+
     border-radius:9px;
+
     background:var(--maroon);
+
     color:#fff;
+
     font-family:inherit;
+
     font-size:15.5px;
+
     font-weight:600;
+
     cursor:pointer;
+
     margin-top:14px;
   }
 
   .btn:disabled{
     opacity:.55;
+
     cursor:not-allowed;
   }
 
   .err{
     color:var(--maroon);
+
     font-size:12.5px;
+
     margin:7px 0 0;
+
     display:none;
   }
 
   .success{
     color:#276749;
+
     font-size:13px;
+
     margin-top:10px;
+
     display:none;
   }
 
-  /* Sponsorship Contribution Table */
+
+  /* =========================
+     CONTRIBUTION TABLE
+  ========================= */
+
   .contribution-section{
     margin:20px 20px 0;
+
     background:#fff;
+
     border:1px solid var(--line);
+
     border-radius:14px;
+
     padding:18px 14px 16px;
   }
 
   .contribution-title{
     text-align:center;
+
     color:red;
+
     font-family:'Times New Roman',serif;
+
     font-size:18px;
+
     font-weight:700;
+
     margin:0 0 14px;
   }
 
   .contribution-table-wrap{
     width:100%;
+
     overflow-x:auto;
   }
 
   .contribution-table{
     width:100%;
+
     min-width:600px;
+
     border-collapse:collapse;
+
     table-layout:fixed;
+
     font-family:'Times New Roman',serif;
+
     font-size:14px;
   }
 
   .contribution-table th{
     background:#ead3e9;
+
     color:#111;
+
     border:1px solid #777;
+
     padding:6px 5px;
+
     text-align:center;
+
     font-weight:700;
   }
 
   .contribution-table td{
     border:1px solid #777;
+
     padding:7px 5px;
+
     text-align:center;
+
     font-weight:600;
+
     background:#fff;
   }
 
   .contribution-table td:first-child{
     text-align:left;
+
     width:22%;
+  }
+
+  html[dir="rtl"] .contribution-table td:first-child{
+    text-align:right;
   }
 
   .contribution-table td:nth-child(2){
@@ -301,20 +509,94 @@
 
   .category-name{
     font-weight:700;
+
     font-size:15px;
   }
 
   .category-class{
     display:block;
+
     font-size:11px;
+
     font-weight:400;
+
     line-height:1.3;
   }
 
   .contribution-table small{
     font-size:10px;
+
     font-weight:400;
   }
+
+
+  /* =========================
+     RTL / ARABIC
+  ========================= */
+
+  html[dir="rtl"] body{
+    font-family:'Cairo',sans-serif;
+  }
+
+  html[dir="rtl"] .hero{
+    text-align:right;
+  }
+
+  html[dir="rtl"] .eyebrow{
+    font-family:'Cairo',sans-serif;
+
+    font-size:15px;
+
+    letter-spacing:0;
+  }
+
+  html[dir="rtl"] .title{
+    font-family:'Cairo',sans-serif;
+
+    font-size:26px;
+
+    font-weight:700;
+  }
+
+  html[dir="rtl"] .sub{
+    font-size:14px;
+
+    line-height:1.9;
+  }
+
+  html[dir="rtl"] .join-title{
+    font-family:'Cairo',sans-serif;
+  }
+
+  html[dir="rtl"] input,
+  html[dir="rtl"] select{
+    text-align:right;
+  }
+
+  html[dir="rtl"] .target{
+    text-align:right;
+  }
+
+  html[dir="rtl"] .contribution-title{
+    font-family:'Cairo',sans-serif;
+
+    font-size:17px;
+  }
+
+  html[dir="rtl"] .contribution-table{
+    font-family:'Cairo',sans-serif;
+
+    font-size:12px;
+  }
+
+  html[dir="rtl"] .contribution-table small{
+    font-size:9px;
+  }
+
+
+  /* =========================
+     MOBILE
+  ========================= */
 
   @media(max-width:560px){
 
@@ -327,11 +609,11 @@
     }
 
     .hero{
-      padding:26px 18px 32px;
+      padding:18px 18px 32px;
     }
 
     .eyebrow{
-      font-size:22px;
+      font-size:20px;
     }
 
     .title{
@@ -344,132 +626,296 @@
 
     .card{
       margin-left:14px;
+
       margin-right:14px;
+
       padding:18px 15px;
     }
 
     .contribution-section{
       margin-left:14px;
+
       margin-right:14px;
+
       padding:16px 10px;
     }
 
     .contribution-title{
       font-size:16px;
     }
+
+    html[dir="rtl"] .title{
+      font-size:23px;
+    }
+
+    html[dir="rtl"] .sub{
+      font-size:13.5px;
+    }
   }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="wrap">
 
-  <!-- HERO -->
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
   <div class="hero">
 
-    <h1 class="eyebrow">
+
+    <!-- LANGUAGE TOGGLE -->
+
+    <div class="language-row">
+
+      <button
+        class="language-btn"
+        id="languageBtn"
+        type="button"
+        onclick="toggleLanguage()"
+      >
+        العربية
+      </button>
+
+    </div>
+
+
+    <!-- HERO CONTENT -->
+
+    <h1
+      class="eyebrow"
+      data-i18n="eyebrow"
+    >
       Scholarship Department, ITM-EX Forum
     </h1>
 
-    <h1 class="title">
+
+    <h1
+      class="title"
+      data-i18n="title"
+    >
       B & C Category Sponsorship Challenge
     </h1>
 
-    <p class="sub">
-      For ESP 3rd Batch, we need 10 sponsors for B-Category
-      (Class 9–10 School/Alia Madrasa) and 10 sponsors for
-      C-Category (Class 11–12 / Hon's / Master's /
-      Chaharum-Dawrah / Takassus Level).
+
+    <p
+      class="sub"
+      data-i18n="heroDescription"
+    >
+      For ESP 3rd Batch, 20 sponsors are needed:
+      10 sponsors for B-Category (Class 9-10 School/Alia Madrasa)
+      and 10 sponsors for C-Category
+      (Class 11-12 / Hon's / Master's /
+      Dawrah-Takassus Level).
     </p>
 
   </div>
 
 
-  <!-- COUNTDOWN -->
+
+  <!-- =========================
+       COUNTDOWN
+  ========================== -->
+
   <div class="card">
 
+
     <p class="cd-label">
-      <i>Deadline — September 11, 2026</i>
+
+      <i data-i18n="deadline">
+        Deadline — September 11, 2026
+      </i>
+
     </p>
+
 
     <div class="cd-row">
 
-      <div class="cd-box">
-        <div class="cd-num" id="cd-d">--</div>
-        <div class="cd-unit">Days</div>
-      </div>
 
       <div class="cd-box">
-        <div class="cd-num" id="cd-h">--</div>
-        <div class="cd-unit">Hours</div>
+
+        <div
+          class="cd-num"
+          id="cd-d"
+        >
+          --
+        </div>
+
+        <div
+          class="cd-unit"
+          data-i18n="days"
+        >
+          Days
+        </div>
+
       </div>
 
-      <div class="cd-box">
-        <div class="cd-num" id="cd-m">--</div>
-        <div class="cd-unit">Minutes</div>
-      </div>
 
       <div class="cd-box">
-        <div class="cd-num" id="cd-s">--</div>
-        <div class="cd-unit">Seconds</div>
+
+        <div
+          class="cd-num"
+          id="cd-h"
+        >
+          --
+        </div>
+
+        <div
+          class="cd-unit"
+          data-i18n="hours"
+        >
+          Hours
+        </div>
+
+      </div>
+
+
+      <div class="cd-box">
+
+        <div
+          class="cd-num"
+          id="cd-m"
+        >
+          --
+        </div>
+
+        <div
+          class="cd-unit"
+          data-i18n="minutes"
+        >
+          Minutes
+        </div>
+
+      </div>
+
+
+      <div class="cd-box">
+
+        <div
+          class="cd-num"
+          id="cd-s"
+        >
+          --
+        </div>
+
+        <div
+          class="cd-unit"
+          data-i18n="seconds"
+        >
+          Seconds
+        </div>
+
       </div>
 
     </div>
 
-    <p class="deadline-note" id="deadline-note"></p>
+
+    <p
+      class="deadline-note"
+      id="deadline-note"
+    ></p>
 
   </div>
 
 
-  <!-- TARGET DASHBOARD -->
+
+  <!-- =========================
+       TARGET DASHBOARD
+  ========================== -->
+
   <div class="card">
+
 
     <div class="targets">
 
+
       <!-- B CATEGORY -->
+
       <div class="target">
 
-        <h2>B-Category</h2>
+        <h2 data-i18n="bCategory">
+          B-Category
+        </h2>
+
 
         <div>
-          <span class="score" id="b-secured">0</span> / 10
+          <span
+            class="score"
+            id="b-secured"
+          >
+            0
+          </span>
+
+          / 10
         </div>
 
-        <div class="remain" id="b-remain">
+
+        <div
+          class="remain"
+          id="b-remain"
+        >
           10 remaining
         </div>
 
+
         <div class="bar-track">
+
           <div
             class="bar-fill"
             id="b-bar"
-            style="width:0%">
-          </div>
+            style="width:0%"
+          ></div>
+
         </div>
 
       </div>
 
 
+
       <!-- C CATEGORY -->
+
       <div class="target">
 
-        <h2>C-Category</h2>
+        <h2 data-i18n="cCategory">
+          C-Category
+        </h2>
+
 
         <div>
-          <span class="score" id="c-secured">0</span> / 10
+
+          <span
+            class="score"
+            id="c-secured"
+          >
+            0
+          </span>
+
+          / 10
+
         </div>
 
-        <div class="remain" id="c-remain">
+
+        <div
+          class="remain"
+          id="c-remain"
+        >
           10 remaining
         </div>
 
+
         <div class="bar-track">
+
           <div
             class="bar-fill"
             id="c-bar"
-            style="width:0%">
-          </div>
+            style="width:0%"
+          ></div>
+
         </div>
 
       </div>
@@ -479,127 +925,235 @@
   </div>
 
 
-  <!-- SPONSOR FORM -->
+
+  <!-- =========================
+       SPONSOR FORM
+  ========================== -->
+
   <div class="card">
 
-    <p class="join-title">
+
+    <p
+      class="join-title"
+      data-i18n="joinTitle"
+    >
       Are you interested in becoming a sponsor?
     </p>
 
-    <p class="join-desc">
+
+    <p
+      class="join-desc"
+      data-i18n="joinDescription"
+    >
       Please provide your category, name, and mobile number.
       Your information will be kept private and secure.
     </p>
 
 
-    <label for="category">
+
+    <label
+      for="category"
+      data-i18n="categoryLabel"
+    >
       Category
     </label>
 
+
     <select id="category">
 
-      <option value="">
+      <option
+        value=""
+        data-i18n="selectCategory"
+      >
         Select a category
       </option>
 
-      <option value="B">
+
+      <option
+        value="B"
+        data-i18n="bCategory"
+      >
         B-Category
       </option>
 
-      <option value="C">
+
+      <option
+        value="C"
+        data-i18n="cCategory"
+      >
         C-Category
       </option>
 
     </select>
 
 
-    <label for="name">
+
+    <label
+      for="name"
+      data-i18n="nameLabel"
+    >
       Name
     </label>
+
 
     <input
       id="name"
       type="text"
       placeholder="Enter your name"
+      data-i18n-placeholder="namePlaceholder"
       autocomplete="name"
     >
 
 
-    <label for="mobile">
+
+    <label
+      for="mobile"
+      data-i18n="mobileLabel"
+    >
       Mobile Number
     </label>
+
+
+    <!--
+      NO FORMAT RESTRICTION.
+      Any country / any number of digits / any format.
+    -->
 
     <input
       id="mobile"
       type="text"
       placeholder="Enter any mobile or phone number"
+      data-i18n-placeholder="mobilePlaceholder"
       autocomplete="tel"
     >
 
 
-    <p class="err" id="err"></p>
+
+    <p
+      class="err"
+      id="err"
+    ></p>
 
 
-    <button class="btn" id="submit">
-      I am interested — Submit Information
+
+    <button
+      class="btn"
+      id="submit"
+      type="button"
+    >
+      <span data-i18n="submitButton">
+        I am interested — Submit Information
+      </span>
     </button>
 
 
-    <p class="success" id="success">
+
+    <p
+      class="success"
+      id="success"
+      data-i18n="successMessage"
+    >
       Information submitted successfully. Thank you!
     </p>
 
   </div>
 
 
-  <!-- CONTRIBUTION BREAKDOWN TABLE -->
+
+  <!-- =========================
+       CONTRIBUTION TABLE
+  ========================== -->
+
   <div class="contribution-section">
 
-    <p class="contribution-title">
+
+    <p
+      class="contribution-title"
+      data-i18n="contributionTitle"
+    >
       The sponsorship contribution breakdown is provided below:
     </p>
 
+
     <div class="contribution-table-wrap">
+
 
       <table class="contribution-table">
 
+
         <thead>
+
           <tr>
-            <th>Category</th>
-            <th>For 1 Month</th>
-            <th>For 3 Months</th>
-            <th>For 6 Months</th>
-            <th>For 1 Year</th>
+
+            <th data-i18n="tableCategory">
+              Category
+            </th>
+
+            <th data-i18n="oneMonth">
+              For 1 Month
+            </th>
+
+            <th data-i18n="threeMonths">
+              For 3 Months
+            </th>
+
+            <th data-i18n="sixMonths">
+              For 6 Months
+            </th>
+
+            <th data-i18n="oneYear">
+              For 1 Year
+            </th>
+
           </tr>
+
         </thead>
+
 
         <tbody>
 
+
           <!-- C CATEGORY -->
+
           <tr>
 
             <td>
-              <span class="category-name">
+
+              <span
+                class="category-name"
+                data-i18n="cCategory"
+              >
                 C-Category
               </span>
 
-              <span class="category-class">
+
+              <span
+                class="category-class"
+                data-i18n="cClass"
+              >
                 (Class 11–12)
               </span>
+
             </td>
+
 
             <td>
               = 1,650 TK<br>
-              <small>(1,500 + 150)</small>
+              <small>
+                (1,500 + 150)
+              </small>
             </td>
+
 
             <td>
               BDT = 4,950
             </td>
 
+
             <td>
               BDT = 9,900
             </td>
+
 
             <td>
               BDT = 19,800
@@ -608,37 +1162,55 @@
           </tr>
 
 
+
           <!-- B CATEGORY -->
+
           <tr>
 
             <td>
-              <span class="category-name">
+
+              <span
+                class="category-name"
+                data-i18n="bCategory"
+              >
                 B-Category
               </span>
 
-              <span class="category-class">
+
+              <span
+                class="category-class"
+                data-i18n="bClass"
+              >
                 (Class 9–10)
               </span>
+
             </td>
+
 
             <td>
               = 1,150 TK<br>
-              <small>(1,000 + 150)</small>
+              <small>
+                (1,000 + 150)
+              </small>
             </td>
+
 
             <td>
               BDT = 3,450
             </td>
 
+
             <td>
               BDT = 6,900
             </td>
+
 
             <td>
               BDT = 13,800
             </td>
 
           </tr>
+
 
         </tbody>
 
@@ -651,92 +1223,604 @@
 </div>
 
 
+
 <!-- Hidden Google Apps Script form target -->
+
 <iframe
   name="submitFrame"
   id="submitFrame"
-  style="display:none">
-</iframe>
+  style="display:none"
+></iframe>
+
 
 
 <script>
 
-  // Google Apps Script Web App URL
+
+  /* =====================================================
+     GOOGLE APPS SCRIPT
+  ===================================================== */
+
   const SCRIPT_URL =
     'https://script.google.com/macros/s/AKfycbybZUHjnlhvcow5n9Bmj_QTegkGJcPAwcx785Qd8qvRaqkMuQGnSBQH4AC7cnQ3gWsc/exec';
 
 
-  // B Category = 10
-  // C Category = 10
+  /* =====================================================
+     TARGET
+  ===================================================== */
+
   const TARGET = 10;
 
 
-  // Deadline
+  /* =====================================================
+     DEADLINE
+  ===================================================== */
+
   const DEADLINE =
     new Date('2026-09-11T23:59:59+06:00');
 
 
-  function pad(n){
-    return String(n).padStart(2,'0');
+
+  /* =====================================================
+     LANGUAGE DATA
+  ===================================================== */
+
+  const translations = {
+
+    en: {
+
+      eyebrow:
+        'Scholarship Department, ITM-EX Forum',
+
+      title:
+        'B & C Category Sponsorship Challenge',
+
+      heroDescription:
+        'For ESP 3rd Batch, 20 sponsors are needed: 10 sponsors for B-Category (Class 9-10 School/Alia Madrasa) and 10 sponsors for C-Category (Class 11-12 / Hon\'s / Master\'s / Dawrah-Takassus Level).',
+
+      deadline:
+        'Deadline — September 11, 2026',
+
+      days:
+        'Days',
+
+      hours:
+        'Hours',
+
+      minutes:
+        'Minutes',
+
+      seconds:
+        'Seconds',
+
+      bCategory:
+        'B-Category',
+
+      cCategory:
+        'C-Category',
+
+      joinTitle:
+        'Are you interested in becoming a sponsor?',
+
+      joinDescription:
+        'Please provide your category, name, and mobile number. Your information will be kept private and secure.',
+
+      categoryLabel:
+        'Category',
+
+      selectCategory:
+        'Select a category',
+
+      nameLabel:
+        'Name',
+
+      namePlaceholder:
+        'Enter your name',
+
+      mobileLabel:
+        'Mobile Number',
+
+      mobilePlaceholder:
+        'Enter any mobile or phone number',
+
+      submitButton:
+        'I am interested — Submit Information',
+
+      successMessage:
+        'Information submitted successfully. Thank you!',
+
+      contributionTitle:
+        'The sponsorship contribution breakdown is provided below:',
+
+      tableCategory:
+        'Category',
+
+      oneMonth:
+        'For 1 Month',
+
+      threeMonths:
+        'For 3 Months',
+
+      sixMonths:
+        'For 6 Months',
+
+      oneYear:
+        'For 1 Year',
+
+      bClass:
+        '(Class 9–10)',
+
+      cClass:
+        '(Class 11–12)',
+
+      remaining:
+        'remaining',
+
+      countdownRunning:
+        'Countdown is running from August 27 to September 11, 2026.',
+
+      deadlinePassed:
+        'The deadline has passed.',
+
+      selectCategoryError:
+        'Please select B-Category or C-Category.',
+
+      nameError:
+        'Please enter a valid name.',
+
+      mobileError:
+        'Please enter a mobile number.',
+
+      urlError:
+        'Please add the Google Apps Script URL first.',
+
+      submitting:
+        'Submitting...',
+
+      submitted:
+        'Submitted ✓ Add Another Sponsor',
+
+      duplicate:
+        'This mobile number is already registered.'
+
+    },
+
+
+    ar: {
+
+      eyebrow:
+        'قسم المنح الدراسية، منتدى ITM-EX',
+
+      title:
+        'تحدي الرعاية لفئتي B و C',
+
+      heroDescription:
+        'للدفعة الثالثة من ESP، نحتاج إلى 20 راعياً: 10 رعاة لفئة B (الصفوف 9–10 / المدرسة أو المدرسة الدينية) و10 رعاة لفئة C (الصفوف 11–12 / البكالوريوس / الماجستير / دورة الدوره والتخصص).',
+
+      deadline:
+        'الموعد النهائي — 11 سبتمبر 2026',
+
+      days:
+        'يوم',
+
+      hours:
+        'ساعة',
+
+      minutes:
+        'دقيقة',
+
+      seconds:
+        'ثانية',
+
+      bCategory:
+        'الفئة B',
+
+      cCategory:
+        'الفئة C',
+
+      joinTitle:
+        'هل ترغب في أن تصبح راعياً؟',
+
+      joinDescription:
+        'يرجى إدخال الفئة والاسم ورقم الهاتف المحمول. سيتم الحفاظ على خصوصية معلوماتك وأمانها.',
+
+      categoryLabel:
+        'الفئة',
+
+      selectCategory:
+        'اختر الفئة',
+
+      nameLabel:
+        'الاسم',
+
+      namePlaceholder:
+        'أدخل اسمك',
+
+      mobileLabel:
+        'رقم الهاتف المحمول',
+
+      mobilePlaceholder:
+        'أدخل أي رقم هاتف أو هاتف محمول',
+
+      submitButton:
+        'أنا مهتم — إرسال المعلومات',
+
+      successMessage:
+        'تم إرسال المعلومات بنجاح. شكراً لك!',
+
+      contributionTitle:
+        'تفاصيل مساهمة الرعاية موضحة أدناه:',
+
+      tableCategory:
+        'الفئة',
+
+      oneMonth:
+        'لمدة شهر واحد',
+
+      threeMonths:
+        'لمدة 3 أشهر',
+
+      sixMonths:
+        'لمدة 6 أشهر',
+
+      oneYear:
+        'لمدة سنة واحدة',
+
+      bClass:
+        '(الصفوف 9–10)',
+
+      cClass:
+        '(الصفوف 11–12)',
+
+      remaining:
+        'متبقي',
+
+      countdownRunning:
+        'العد التنازلي مستمر من 27 أغسطس إلى 11 سبتمبر 2026.',
+
+      deadlinePassed:
+        'انتهى الموعد النهائي.',
+
+      selectCategoryError:
+        'يرجى اختيار الفئة B أو الفئة C.',
+
+      nameError:
+        'يرجى إدخال اسم صحيح.',
+
+      mobileError:
+        'يرجى إدخال رقم الهاتف.',
+
+      urlError:
+        'يرجى إضافة رابط Google Apps Script أولاً.',
+
+      submitting:
+        'جارٍ الإرسال...',
+
+      submitted:
+        'تم الإرسال ✓ إضافة راعٍ آخر',
+
+      duplicate:
+        'رقم الهاتف هذا مسجل بالفعل.'
+
+    }
+
+  };
+
+
+
+  /* =====================================================
+     CURRENT LANGUAGE
+  ===================================================== */
+
+  let currentLanguage =
+    localStorage.getItem('sponsorLanguage') || 'en';
+
+
+
+  /* =====================================================
+     APPLY LANGUAGE
+  ===================================================== */
+
+  function applyLanguage(){
+
+    const t =
+      translations[currentLanguage];
+
+
+    const html =
+      document.documentElement;
+
+
+    const languageBtn =
+      document.getElementById('languageBtn');
+
+
+    /*
+     * Set page direction.
+     */
+
+    if(currentLanguage === 'ar'){
+
+      html.lang = 'ar';
+
+      html.dir = 'rtl';
+
+      languageBtn.textContent =
+        'English';
+
+    }else{
+
+      html.lang = 'en';
+
+      html.dir = 'ltr';
+
+      languageBtn.textContent =
+        'العربية';
+
+    }
+
+
+    /*
+     * Translate normal text.
+     */
+
+    document
+      .querySelectorAll('[data-i18n]')
+      .forEach(element => {
+
+        const key =
+          element.getAttribute('data-i18n');
+
+
+        if(t[key] !== undefined){
+
+          element.textContent =
+            t[key];
+
+        }
+
+      });
+
+
+    /*
+     * Translate placeholders.
+     */
+
+    document
+      .querySelectorAll('[data-i18n-placeholder]')
+      .forEach(element => {
+
+        const key =
+          element.getAttribute(
+            'data-i18n-placeholder'
+          );
+
+
+        if(t[key] !== undefined){
+
+          element.placeholder =
+            t[key];
+
+        }
+
+      });
+
+
+    /*
+     * Update dashboard text.
+     */
+
+    updateDashboardText();
+
+
+    /*
+     * Update countdown note.
+     */
+
+    updateCountdownNote();
+
   }
 
 
-  // Countdown
-  function tickCountdown(){
 
-    let diff = DEADLINE - new Date();
+  /* =====================================================
+     LANGUAGE TOGGLE
+  ===================================================== */
+
+  function toggleLanguage(){
+
+    currentLanguage =
+      currentLanguage === 'en'
+        ? 'ar'
+        : 'en';
+
+
+    localStorage.setItem(
+      'sponsorLanguage',
+      currentLanguage
+    );
+
+
+    applyLanguage();
+
+  }
+
+
+
+  /* =====================================================
+     DASHBOARD TEXT
+  ===================================================== */
+
+  function updateDashboardText(){
+
+    const t =
+      translations[currentLanguage];
+
+
+    update(
+      'B',
+      Number(
+        document.getElementById(
+          'b-secured'
+        ).textContent || 0
+      )
+    );
+
+
+    update(
+      'C',
+      Number(
+        document.getElementById(
+          'c-secured'
+        ).textContent || 0
+      )
+    );
+
+  }
+
+
+
+  /* =====================================================
+     COUNTDOWN
+  ===================================================== */
+
+  function pad(n){
+
+    return String(n).padStart(2,'0');
+
+  }
+
+
+
+  function updateCountdownNote(){
 
     const note =
-      document.getElementById('deadline-note');
+      document.getElementById(
+        'deadline-note'
+      );
+
+
+    if(!note) return;
+
+
+    const t =
+      translations[currentLanguage];
+
+
+    const diff =
+      DEADLINE - new Date();
 
 
     if(diff <= 0){
 
-      ['cd-d','cd-h','cd-m','cd-s']
-        .forEach((id,i) => {
+      note.textContent =
+        t.deadlinePassed;
 
-          document.getElementById(id).textContent =
-            i === 0 ? '0' : '00';
+    }else{
 
-        });
+      note.textContent =
+        t.countdownRunning;
+
+    }
+
+  }
+
+
+
+  function tickCountdown(){
+
+    let diff =
+      DEADLINE - new Date();
+
+
+    const note =
+      document.getElementById(
+        'deadline-note'
+      );
+
+
+    const t =
+      translations[currentLanguage];
+
+
+    if(diff <= 0){
+
+      [
+        'cd-d',
+        'cd-h',
+        'cd-m',
+        'cd-s'
+      ].forEach(
+        (id,i) => {
+
+          document.getElementById(id)
+            .textContent =
+              i === 0
+                ? '0'
+                : '00';
+
+        }
+      );
 
 
       note.textContent =
-        'The deadline has passed.';
+        t.deadlinePassed;
+
 
       return;
+
     }
 
 
     const d =
-      Math.floor(diff / 86400000);
+      Math.floor(
+        diff / 86400000
+      );
+
 
     const h =
-      Math.floor(diff / 3600000) % 24;
+      Math.floor(
+        diff / 3600000
+      ) % 24;
+
 
     const m =
-      Math.floor(diff / 60000) % 60;
+      Math.floor(
+        diff / 60000
+      ) % 60;
+
 
     const s =
-      Math.floor(diff / 1000) % 60;
+      Math.floor(
+        diff / 1000
+      ) % 60;
 
 
-    document.getElementById('cd-d').textContent =
-      d;
+    document.getElementById(
+      'cd-d'
+    ).textContent = d;
 
-    document.getElementById('cd-h').textContent =
-      pad(h);
 
-    document.getElementById('cd-m').textContent =
-      pad(m);
+    document.getElementById(
+      'cd-h'
+    ).textContent = pad(h);
 
-    document.getElementById('cd-s').textContent =
-      pad(s);
+
+    document.getElementById(
+      'cd-m'
+    ).textContent = pad(m);
+
+
+    document.getElementById(
+      'cd-s'
+    ).textContent = pad(s);
 
 
     note.textContent =
-      'Countdown is running from August 27 to September 11, 2026.';
+      t.countdownRunning;
+
   }
+
 
 
   tickCountdown();
@@ -747,31 +1831,43 @@
   );
 
 
-  // Update dashboard
-  function update(category,count){
+
+  /* =====================================================
+     UPDATE DASHBOARD
+  ===================================================== */
+
+  function update(
+    category,
+    count
+  ){
 
     const sec =
       document.getElementById(
-        category.toLowerCase() + '-secured'
+        category.toLowerCase() +
+        '-secured'
       );
 
 
     const rem =
       document.getElementById(
-        category.toLowerCase() + '-remain'
+        category.toLowerCase() +
+        '-remain'
       );
 
 
     const bar =
       document.getElementById(
-        category.toLowerCase() + '-bar'
+        category.toLowerCase() +
+        '-bar'
       );
 
 
-    // Maximum target is 10
     count =
       Math.min(
-        Math.max(count,0),
+        Math.max(
+          count,
+          0
+        ),
         TARGET
       );
 
@@ -780,11 +1876,29 @@
       count;
 
 
-    rem.textContent =
-      Math.max(
-        TARGET - count,
-        0
-      ) + ' remaining';
+    const t =
+      translations[currentLanguage];
+
+
+    if(currentLanguage === 'ar'){
+
+      rem.textContent =
+        Math.max(
+          TARGET - count,
+          0
+        ) + ' ' +
+        t.remaining;
+
+    }else{
+
+      rem.textContent =
+        Math.max(
+          TARGET - count,
+          0
+        ) + ' ' +
+        t.remaining;
+
+    }
 
 
     bar.style.width =
@@ -792,18 +1906,31 @@
         count / TARGET * 100,
         100
       ) + '%';
+
   }
 
 
-  // Load dashboard
+
+  /* =====================================================
+     LOAD DASHBOARD
+  ===================================================== */
+
   function loadDashboard(){
 
-    if(SCRIPT_URL.includes('PASTE_'))
+    if(
+      SCRIPT_URL.includes(
+        'PASTE_'
+      )
+    ){
+
       return;
+
+    }
 
 
     const cb =
-      'dashboard_' + Date.now();
+      'dashboard_' +
+      Date.now();
 
 
     window[cb] =
@@ -811,24 +1938,31 @@
 
         update(
           'B',
-          Number(data.B || 0)
+          Number(
+            data.B || 0
+          )
         );
 
 
         update(
           'C',
-          Number(data.C || 0)
+          Number(
+            data.C || 0
+          )
         );
 
 
         delete window[cb];
 
         script.remove();
+
       };
 
 
     const script =
-      document.createElement('script');
+      document.createElement(
+        'script'
+      );
 
 
     script.id = cb;
@@ -850,26 +1984,48 @@
       };
 
 
-    document.body.appendChild(script);
+    document.body.appendChild(
+      script
+    );
+
   }
 
 
-  // Hidden form
+
+  /* =====================================================
+     HIDDEN FORM
+  ===================================================== */
+
   const form =
-    document.createElement('form');
+    document.createElement(
+      'form'
+    );
 
 
-  form.method = 'POST';
-
-  form.target = 'submitFrame';
-
-  form.style.display = 'none';
-
-  document.body.appendChild(form);
+  form.method =
+    'POST';
 
 
-  // Submit sponsor information
-  document.getElementById('submit')
+  form.target =
+    'submitFrame';
+
+
+  form.style.display =
+    'none';
+
+
+  document.body.appendChild(
+    form
+  );
+
+
+
+  /* =====================================================
+     SUBMIT SPONSOR INFORMATION
+  ===================================================== */
+
+  document
+    .getElementById('submit')
     .addEventListener(
       'click',
       function(){
@@ -888,12 +2044,22 @@
 
         /*
          * IMPORTANT:
-         * Mobile number is intentionally NOT trimmed,
-         * formatted, converted, or validated.
          *
-         * Any country, any number of digits,
-         * spaces, +, -, brackets, etc. are allowed.
+         * Mobile number is NOT trimmed,
+         * formatted, converted or validated.
+         *
+         * Any country.
+         * Any number of digits.
+         * Any format.
+         *
+         * Example:
+         * +88015343412
+         * +1 202-555-0198
+         * +44 7911 123456
+         * 01712345678
+         * etc.
          */
+
         const mobile =
           document.getElementById(
             'mobile'
@@ -912,7 +2078,12 @@
           );
 
 
-        const btn = this;
+        const btn =
+          this;
+
+
+        const t =
+          translations[currentLanguage];
 
 
         err.style.display =
@@ -923,67 +2094,114 @@
           'none';
 
 
-        if(SCRIPT_URL.includes('PASTE_')){
+        /*
+         * Script URL check
+         */
+
+        if(
+          SCRIPT_URL.includes(
+            'PASTE_'
+          )
+        ){
 
           err.textContent =
-            'Please add the Google Apps Script URL first.';
+            t.urlError;
 
           err.style.display =
             'block';
 
           return;
-        }
 
-
-        if(!category){
-
-          err.textContent =
-            'Please select B-Category or C-Category.';
-
-          err.style.display =
-            'block';
-
-          return;
-        }
-
-
-        if(name.length < 2){
-
-          err.textContent =
-            'Please enter a valid name.';
-
-          err.style.display =
-            'block';
-
-          return;
         }
 
 
         /*
-         * NO MOBILE NUMBER VALIDATION HERE.
-         *
-         * Any value entered in the mobile field
-         * will be sent exactly as entered.
+         * Category validation
          */
-        
+
+        if(!category){
+
+          err.textContent =
+            t.selectCategoryError;
+
+          err.style.display =
+            'block';
+
+          return;
+
+        }
+
+
+        /*
+         * Name validation
+         */
+
+        if(name.length < 2){
+
+          err.textContent =
+            t.nameError;
+
+          err.style.display =
+            'block';
+
+          return;
+
+        }
+
+
+        /*
+         * NO MOBILE FORMAT VALIDATION.
+         *
+         * This means:
+         *
+         * +88015343412
+         * +880 15343412
+         * +1 202-555-0198
+         * 123
+         * 123456789012345
+         * etc.
+         *
+         * are all accepted.
+         */
+
 
         btn.disabled =
           true;
 
 
         btn.textContent =
-          'Submitting...';
+          t.submitting;
 
+
+        /*
+         * Build hidden POST form
+         */
 
         form.innerHTML =
           '';
 
 
         [
-          ['category',category],
-          ['name',name],
-          ['mobile',mobile],
-          ['source','public-page']
+          [
+            'category',
+            category
+          ],
+
+          [
+            'name',
+            name
+          ],
+
+          [
+            'mobile',
+            mobile
+          ],
+
+          [
+            'source',
+            'public-page'
+          ]
+
         ].forEach(
           ([k,v]) => {
 
@@ -992,11 +2210,18 @@
                 'input'
               );
 
+
+            input.type =
+              'hidden';
+
+
             input.name =
               k;
 
+
             input.value =
               v;
+
 
             form.appendChild(
               input
@@ -1013,7 +2238,10 @@
         form.submit();
 
 
-        // Hidden iframe submission
+        /*
+         * Hidden iframe submission
+         */
+
         setTimeout(
           () => {
 
@@ -1026,7 +2254,7 @@
 
 
             btn.textContent =
-              'Submitted ✓ Add Another Sponsor';
+              t.submitted;
 
 
             document.getElementById(
@@ -1045,7 +2273,9 @@
               () => {
 
                 btn.textContent =
-                  'I am interested — Submit Information';
+                  translations[
+                    currentLanguage
+                  ].submitButton;
 
               },
               2000
@@ -1062,15 +2292,25 @@
     );
 
 
-  // Initial dashboard load
+
+  /* =====================================================
+     INITIALIZE
+  ===================================================== */
+
+  applyLanguage();
+
   loadDashboard();
 
 
-  // Refresh dashboard every 10 seconds
+  /*
+   * Refresh dashboard every 10 seconds
+   */
+
   setInterval(
     loadDashboard,
     10000
   );
+
 
 </script>
 
