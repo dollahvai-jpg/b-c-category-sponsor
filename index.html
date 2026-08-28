@@ -531,9 +531,8 @@
 
     <input
       id="mobile"
-      type="tel"
-      placeholder="01XXXXXXXXX"
-      inputmode="tel"
+      type="text"
+      placeholder="Enter any mobile or phone number"
       autocomplete="tel"
     >
 
@@ -887,10 +886,18 @@
           ).value.trim();
 
 
+        /*
+         * IMPORTANT:
+         * Mobile number is intentionally NOT trimmed,
+         * formatted, converted, or validated.
+         *
+         * Any country, any number of digits,
+         * spaces, +, -, brackets, etc. are allowed.
+         */
         const mobile =
           document.getElementById(
             'mobile'
-          ).value.trim();
+          ).value;
 
 
         const err =
@@ -952,17 +959,13 @@
         }
 
 
-        if(!mobile){
-
-  err.textContent =
-    'Please enter a mobile number.';
-
-  err.style.display =
-    'block';
-
-  return;
-}
-
+        /*
+         * NO MOBILE NUMBER VALIDATION HERE.
+         *
+         * Any value entered in the mobile field
+         * will be sent exactly as entered.
+         */
+        
 
         btn.disabled =
           true;
