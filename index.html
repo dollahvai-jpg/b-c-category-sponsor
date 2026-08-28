@@ -1,188 +1,1083 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>B & C-Category Sponsor Challenge</title>
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Baloo+Da+2:wght@600;700&display=swap');
-  :root{--navy:#0f2a4a;--navy2:#16406e;--gold:#c9922a;--goldl:#f4e2ba;--maroon:#8a1f2d;--cream:#fbf7ee;--line:#e4dcc8;--ink:#1c2733;--soft:#5b6673}
-  *{box-sizing:border-box} body{margin:0;font-family:'Hind Siliguri',sans-serif;background:var(--cream);color:var(--ink)}
-  .wrap{max-width:760px;margin:auto;padding-bottom:48px}.hero{background:linear-gradient(180deg,var(--navy),var(--navy2));color:#fff;padding:32px 24px 40px}
+
+  :root{
+    --navy:#0f2a4a;
+    --navy2:#16406e;
+    --gold:#c9922a;
+    --goldl:#f4e2ba;
+    --maroon:#8a1f2d;
+    --cream:#fbf7ee;
+    --line:#e4dcc8;
+    --ink:#1c2733;
+    --soft:#5b6673;
+  }
+
+  *{
+    box-sizing:border-box;
+  }
+
+  body{
+    margin:0;
+    font-family:'Hind Siliguri',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+  }
+
+  .wrap{
+    max-width:760px;
+    margin:auto;
+    padding-bottom:48px;
+  }
+
+  .hero{
+    background:linear-gradient(180deg,var(--navy),var(--navy2));
+    color:#fff;
+    padding:32px 24px 40px;
+  }
+
   .eyebrow{
-  font-family:'Times New Roman';
-  font-size:26px;
-  line-height:1.3;
-  letter-spacing:0;
-  color:var(--goldl);
-  font-weight:700;
-  margin:0 0 6px;
-}
-  .title{font-family:'Baloo Da 2';font-size:28px;line-height:1.3;margin:0 0 6px}.sub{font-size:15px;color:#cfe0f0;margin:0;line-height:1.6}
-  .card{background:#fff;border:1px solid var(--line);border-radius:14px;margin:20px 20px 0;padding:22px 20px}
-  .cd-label,.list-title{font-size:13px;color:var(--soft);font-weight:600;margin:0 0 12px}.cd-row{display:flex;gap:10px}.cd-box{flex:1;background:var(--navy);color:#fff;border-radius:10px;padding:12px 4px;text-align:center}
-  .cd-num{font-family:'Baloo Da 2';font-size:26px;font-weight:700;line-height:1}.cd-unit{font-size:11px;color:var(--goldl);margin-top:4px}.deadline-note{font-size:12.5px;color:var(--soft);margin-top:12px;text-align:center}
-  .targets{display:grid;grid-template-columns:1fr 1fr;gap:14px}.target{border:1px solid var(--line);border-radius:12px;padding:15px}.target h2{margin:0;color:var(--navy);font-family:'Baloo Da 2';font-size:22px}
-  .score{font-family:'Baloo Da 2';font-size:31px;color:var(--maroon);font-weight:700}.remain{color:var(--navy);font-weight:600}.bar-track{height:12px;background:#eee4cd;border-radius:8px;overflow:hidden}.bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--maroon));transition:width .5s}
-  .join-title{font-family:'Baloo Da 2';font-size:20px;margin:0 0 6px;color:var(--navy)}.join-desc{font-size:14px;color:var(--soft);margin:0 0 16px;line-height:1.6}
-  label{display:block;font-size:13px;font-weight:600;margin:10px 0 6px}input,select{width:100%;padding:12px 13px;border-radius:9px;border:1px solid var(--line);font-family:inherit;font-size:15px;background:#fff}
-  input:focus,select:focus{outline:none;border-color:var(--gold)}.btn{width:100%;padding:13px;border:0;border-radius:9px;background:var(--maroon);color:#fff;font-family:inherit;font-size:15.5px;font-weight:600;cursor:pointer;margin-top:14px}
-  .btn:disabled{opacity:.55;cursor:not-allowed}.err{color:var(--maroon);font-size:12.5px;margin:7px 0 0;display:none}.success{color:#276749;font-size:13px;margin-top:10px;display:none}
-  .privacy{font-size:12.5px;color:var(--soft);line-height:1.6;margin-top:13px}.privacy b{color:var(--navy)}
-  .foot-note strong{
-  font-size:13.5px;
-  font-weight:700;
-  color:var(--navy);
-}
-  @media(max-width:560px){.targets{grid-template-columns:1fr}.cd-row{gap:6px}}
+    font-family:'Times New Roman',serif;
+    font-size:26px;
+    line-height:1.3;
+    color:var(--goldl);
+    font-weight:700;
+    margin:0 0 6px;
+  }
+
+  .title{
+    font-family:'Baloo Da 2',sans-serif;
+    font-size:28px;
+    line-height:1.3;
+    margin:0 0 6px;
+  }
+
+  .sub{
+    font-size:15px;
+    color:#cfe0f0;
+    margin:0;
+    line-height:1.6;
+  }
+
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    margin:20px 20px 0;
+    padding:22px 20px;
+  }
+
+  .cd-label,
+  .list-title{
+    font-size:13px;
+    color:var(--soft);
+    font-weight:600;
+    margin:0 0 12px;
+  }
+
+  .cd-row{
+    display:flex;
+    gap:10px;
+  }
+
+  .cd-box{
+    flex:1;
+    background:var(--navy);
+    color:#fff;
+    border-radius:10px;
+    padding:12px 4px;
+    text-align:center;
+  }
+
+  .cd-num{
+    font-family:'Baloo Da 2',sans-serif;
+    font-size:26px;
+    font-weight:700;
+    line-height:1;
+  }
+
+  .cd-unit{
+    font-size:11px;
+    color:var(--goldl);
+    margin-top:4px;
+  }
+
+  .deadline-note{
+    font-size:12.5px;
+    color:var(--soft);
+    margin-top:12px;
+    text-align:center;
+  }
+
+  .targets{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+
+  .target{
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:15px;
+  }
+
+  .target h2{
+    margin:0;
+    color:var(--navy);
+    font-family:'Baloo Da 2',sans-serif;
+    font-size:22px;
+  }
+
+  .score{
+    font-family:'Baloo Da 2',sans-serif;
+    font-size:31px;
+    color:var(--maroon);
+    font-weight:700;
+  }
+
+  .remain{
+    color:var(--navy);
+    font-weight:600;
+  }
+
+  .bar-track{
+    height:12px;
+    background:#eee4cd;
+    border-radius:8px;
+    overflow:hidden;
+    margin-top:7px;
+  }
+
+  .bar-fill{
+    height:100%;
+    background:linear-gradient(90deg,var(--gold),var(--maroon));
+    transition:width .5s;
+  }
+
+  .join-title{
+    font-family:'Baloo Da 2',sans-serif;
+    font-size:20px;
+    margin:0 0 6px;
+    color:var(--navy);
+  }
+
+  .join-desc{
+    font-size:14px;
+    color:var(--soft);
+    margin:0 0 16px;
+    line-height:1.6;
+  }
+
+  label{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    margin:10px 0 6px;
+  }
+
+  input,
+  select{
+    width:100%;
+    padding:12px 13px;
+    border-radius:9px;
+    border:1px solid var(--line);
+    font-family:inherit;
+    font-size:15px;
+    background:#fff;
+  }
+
+  input:focus,
+  select:focus{
+    outline:none;
+    border-color:var(--gold);
+  }
+
+  .btn{
+    width:100%;
+    padding:13px;
+    border:0;
+    border-radius:9px;
+    background:var(--maroon);
+    color:#fff;
+    font-family:inherit;
+    font-size:15.5px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:14px;
+  }
+
+  .btn:disabled{
+    opacity:.55;
+    cursor:not-allowed;
+  }
+
+  .err{
+    color:var(--maroon);
+    font-size:12.5px;
+    margin:7px 0 0;
+    display:none;
+  }
+
+  .success{
+    color:#276749;
+    font-size:13px;
+    margin-top:10px;
+    display:none;
+  }
+
+  /* Sponsorship Contribution Table */
+  .contribution-section{
+    margin:20px 20px 0;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px 14px 16px;
+  }
+
+  .contribution-title{
+    text-align:center;
+    color:red;
+    font-family:'Times New Roman',serif;
+    font-size:18px;
+    font-weight:700;
+    margin:0 0 14px;
+  }
+
+  .contribution-table-wrap{
+    width:100%;
+    overflow-x:auto;
+  }
+
+  .contribution-table{
+    width:100%;
+    min-width:600px;
+    border-collapse:collapse;
+    table-layout:fixed;
+    font-family:'Times New Roman',serif;
+    font-size:14px;
+  }
+
+  .contribution-table th{
+    background:#ead3e9;
+    color:#111;
+    border:1px solid #777;
+    padding:6px 5px;
+    text-align:center;
+    font-weight:700;
+  }
+
+  .contribution-table td{
+    border:1px solid #777;
+    padding:7px 5px;
+    text-align:center;
+    font-weight:600;
+    background:#fff;
+  }
+
+  .contribution-table td:first-child{
+    text-align:left;
+    width:22%;
+  }
+
+  .contribution-table td:nth-child(2){
+    background:#dcebf7;
+  }
+
+  .contribution-table td:nth-child(3){
+    background:#f7f7f7;
+  }
+
+  .contribution-table td:nth-child(4),
+  .contribution-table td:nth-child(5){
+    background:#dff0d8;
+  }
+
+  .category-name{
+    font-weight:700;
+    font-size:15px;
+  }
+
+  .category-class{
+    display:block;
+    font-size:11px;
+    font-weight:400;
+    line-height:1.3;
+  }
+
+  .contribution-table small{
+    font-size:10px;
+    font-weight:400;
+  }
+
+  @media(max-width:560px){
+
+    .targets{
+      grid-template-columns:1fr;
+    }
+
+    .cd-row{
+      gap:6px;
+    }
+
+    .hero{
+      padding:26px 18px 32px;
+    }
+
+    .eyebrow{
+      font-size:22px;
+    }
+
+    .title{
+      font-size:25px;
+    }
+
+    .sub{
+      font-size:14px;
+    }
+
+    .card{
+      margin-left:14px;
+      margin-right:14px;
+      padding:18px 15px;
+    }
+
+    .contribution-section{
+      margin-left:14px;
+      margin-right:14px;
+      padding:16px 10px;
+    }
+
+    .contribution-title{
+      font-size:16px;
+    }
+  }
 </style>
 </head>
+
 <body>
+
 <div class="wrap">
+
+  <!-- HERO -->
   <div class="hero">
-    <h1 class="eyebrow">Scholarship Department, ITM-EX Forum</h1>
-    <h1 class="title">B & C Category Sponsorship Challenge</h1>
-    <p class="sub">ESP 3rd Batch-এর জন্য B-Category Class 9-10 School/Alia Madrasa-এর ২০ জন এবং C-Category Class 11-12 / Hon's / Masters / Chaharum-Dawrah/Takassus Level-এর ২০ জন স্পন্সর প্রয়োজন।</p>
+
+    <h1 class="eyebrow">
+      Scholarship Department, ITM-EX Forum
+    </h1>
+
+    <h1 class="title">
+      B & C Category Sponsorship Challenge
+    </h1>
+
+    <p class="sub">
+      For ESP 3rd Batch, we need 10 sponsors for B-Category
+      (Class 9–10 School/Alia Madrasa) and 10 sponsors for
+      C-Category (Class 11–12 / Hon's / Master's /
+      Chaharum-Dawrah / Takassus Level).
+    </p>
+
   </div>
 
+
+  <!-- COUNTDOWN -->
   <div class="card">
-    <p class="cd-label"><i>ডেডলাইন — ১১ সেপ্টেম্বর, ২০২৬</i></p>
+
+    <p class="cd-label">
+      <i>Deadline — September 11, 2026</i>
+    </p>
+
     <div class="cd-row">
-      <div class="cd-box"><div class="cd-num" id="cd-d">--</div><div class="cd-unit">দিন</div></div>
-      <div class="cd-box"><div class="cd-num" id="cd-h">--</div><div class="cd-unit">ঘণ্টা</div></div>
-      <div class="cd-box"><div class="cd-num" id="cd-m">--</div><div class="cd-unit">মিনিট</div></div>
-      <div class="cd-box"><div class="cd-num" id="cd-s">--</div><div class="cd-unit">সেকেন্ড</div></div>
+
+      <div class="cd-box">
+        <div class="cd-num" id="cd-d">--</div>
+        <div class="cd-unit">Days</div>
+      </div>
+
+      <div class="cd-box">
+        <div class="cd-num" id="cd-h">--</div>
+        <div class="cd-unit">Hours</div>
+      </div>
+
+      <div class="cd-box">
+        <div class="cd-num" id="cd-m">--</div>
+        <div class="cd-unit">Minutes</div>
+      </div>
+
+      <div class="cd-box">
+        <div class="cd-num" id="cd-s">--</div>
+        <div class="cd-unit">Seconds</div>
+      </div>
+
     </div>
+
     <p class="deadline-note" id="deadline-note"></p>
+
   </div>
 
+
+  <!-- TARGET DASHBOARD -->
   <div class="card">
+
     <div class="targets">
+
+      <!-- B CATEGORY -->
       <div class="target">
+
         <h2>B-Category</h2>
-        <div><span class="score" id="b-secured">0</span> / 20</div>
-        <div class="remain" id="b-remain">20 remaining</div>
-        <div class="bar-track"><div class="bar-fill" id="b-bar" style="width:0%"></div></div>
+
+        <div>
+          <span class="score" id="b-secured">0</span> / 10
+        </div>
+
+        <div class="remain" id="b-remain">
+          10 remaining
+        </div>
+
+        <div class="bar-track">
+          <div
+            class="bar-fill"
+            id="b-bar"
+            style="width:0%">
+          </div>
+        </div>
+
       </div>
+
+
+      <!-- C CATEGORY -->
       <div class="target">
+
         <h2>C-Category</h2>
-        <div><span class="score" id="c-secured">0</span> / 20</div>
-        <div class="remain" id="c-remain">20 remaining</div>
-        <div class="bar-track"><div class="bar-fill" id="c-bar" style="width:0%"></div></div>
+
+        <div>
+          <span class="score" id="c-secured">0</span> / 10
+        </div>
+
+        <div class="remain" id="c-remain">
+          10 remaining
+        </div>
+
+        <div class="bar-track">
+          <div
+            class="bar-fill"
+            id="c-bar"
+            style="width:0%">
+          </div>
+        </div>
+
       </div>
+
     </div>
+
   </div>
 
-  <div class="card">
-    <p class="join-title">আপনি কি স্পন্সর করতে আগ্রহী?</p>
-    <p class="join-desc">আপনার ক্যাটাগরি, নাম ও মোবাইল নম্বর দিন। আপনার তথ্যসমূহ privately সংরক্ষিত থাকবে।</p>
 
-    <label for="category">ক্যাটাগরি</label>
+  <!-- SPONSOR FORM -->
+  <div class="card">
+
+    <p class="join-title">
+      Are you interested in becoming a sponsor?
+    </p>
+
+    <p class="join-desc">
+      Please provide your category, name, and mobile number.
+      Your information will be kept private and secure.
+    </p>
+
+
+    <label for="category">
+      Category
+    </label>
+
     <select id="category">
-      <option value="">ক্যাটাগরি নির্বাচন করুন</option>
-      <option value="B">B-Category</option>
-      <option value="C">C-Category</option>
+
+      <option value="">
+        Select a category
+      </option>
+
+      <option value="B">
+        B-Category
+      </option>
+
+      <option value="C">
+        C-Category
+      </option>
+
     </select>
 
-    <label for="name">নাম</label>
-    <input id="name" type="text" placeholder="আপনার নাম লিখুন" autocomplete="name">
 
-    <label for="mobile">মোবাইল নম্বর</label>
-    <input id="mobile" type="tel" placeholder="01XXXXXXXXX" inputmode="tel" autocomplete="tel">
+    <label for="name">
+      Name
+    </label>
+
+    <input
+      id="name"
+      type="text"
+      placeholder="Enter your name"
+      autocomplete="name"
+    >
+
+
+    <label for="mobile">
+      Mobile Number
+    </label>
+
+    <input
+      id="mobile"
+      type="tel"
+      placeholder="01XXXXXXXXX"
+      inputmode="tel"
+      autocomplete="tel"
+    >
+
 
     <p class="err" id="err"></p>
-    <button class="btn" id="submit">আমি আগ্রহী — তথ্য জমা দিন</button>
-    <p class="success" id="success">তথ্য সফলভাবে জমা হয়েছে। ধন্যবাদ!</p>
-    
+
+
+    <button class="btn" id="submit">
+      I am interested — Submit Information
+    </button>
+
+
+    <p class="success" id="success">
+      Information submitted successfully. Thank you!
+    </p>
+
   </div>
 
-  <p class="foot-note">
-  <strong>B Category: ১১৫০ টাকা / C Category: ১৬৫০ টাকা</strong> মাসে · তিন মাসের বৃত্তি একত্রে বিতরণ করা হবে।
-</p>
+
+  <!-- CONTRIBUTION BREAKDOWN TABLE -->
+  <div class="contribution-section">
+
+    <p class="contribution-title">
+      The sponsorship contribution breakdown is provided below:
+    </p>
+
+    <div class="contribution-table-wrap">
+
+      <table class="contribution-table">
+
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>For 1 Month</th>
+            <th>For 3 Months</th>
+            <th>For 6 Months</th>
+            <th>For 1 Year</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <!-- C CATEGORY -->
+          <tr>
+
+            <td>
+              <span class="category-name">
+                C-Category
+              </span>
+
+              <span class="category-class">
+                (Class 11–12)
+              </span>
+            </td>
+
+            <td>
+              = 1,650 TK<br>
+              <small>(1,500 + 150)</small>
+            </td>
+
+            <td>
+              BDT = 4,950
+            </td>
+
+            <td>
+              BDT = 9,900
+            </td>
+
+            <td>
+              BDT = 19,800
+            </td>
+
+          </tr>
+
+
+          <!-- B CATEGORY -->
+          <tr>
+
+            <td>
+              <span class="category-name">
+                B-Category
+              </span>
+
+              <span class="category-class">
+                (Class 9–10)
+              </span>
+            </td>
+
+            <td>
+              = 1,150 TK<br>
+              <small>(1,000 + 150)</small>
+            </td>
+
+            <td>
+              BDT = 3,450
+            </td>
+
+            <td>
+              BDT = 6,900
+            </td>
+
+            <td>
+              BDT = 13,800
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
 </div>
 
+
 <!-- Hidden Google Apps Script form target -->
-<iframe name="submitFrame" id="submitFrame" style="display:none"></iframe>
+<iframe
+  name="submitFrame"
+  id="submitFrame"
+  style="display:none">
+</iframe>
+
 
 <script>
-  // 1) Replace this with your deployed Google Apps Script Web App URL.
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbybZUHjnlhvcow5n9Bmj_QTegkGJcPAwcx785Qd8qvRaqkMuQGnSBQH4AC7cnQ3gWsc/exec';
-  const TARGET = 20;
-  const DEADLINE = new Date('2026-09-11T23:59:59+06:00');
 
-  function pad(n){return String(n).padStart(2,'0')}
+  // Google Apps Script Web App URL
+  const SCRIPT_URL =
+    'https://script.google.com/macros/s/AKfycbybZUHjnlhvcow5n9Bmj_QTegkGJcPAwcx785Qd8qvRaqkMuQGnSBQH4AC7cnQ3gWsc/exec';
 
+
+  // B Category = 10
+  // C Category = 10
+  const TARGET = 10;
+
+
+  // Deadline
+  const DEADLINE =
+    new Date('2026-09-11T23:59:59+06:00');
+
+
+  function pad(n){
+    return String(n).padStart(2,'0');
+  }
+
+
+  // Countdown
   function tickCountdown(){
-    let diff=DEADLINE-new Date();
-    const note=document.getElementById('deadline-note');
-    if(diff<=0){
-      ['cd-d','cd-h','cd-m','cd-s'].forEach((id,i)=>document.getElementById(id).textContent=i===0?'0':'00');
-      note.textContent='ডেডলাইন পার হয়ে গেছে'; return;
+
+    let diff = DEADLINE - new Date();
+
+    const note =
+      document.getElementById('deadline-note');
+
+
+    if(diff <= 0){
+
+      ['cd-d','cd-h','cd-m','cd-s']
+        .forEach((id,i) => {
+
+          document.getElementById(id).textContent =
+            i === 0 ? '0' : '00';
+
+        });
+
+
+      note.textContent =
+        'The deadline has passed.';
+
+      return;
     }
-    const d=Math.floor(diff/86400000), h=Math.floor(diff/3600000)%24, m=Math.floor(diff/60000)%60, s=Math.floor(diff/1000)%60;
-    document.getElementById('cd-d').textContent=d; document.getElementById('cd-h').textContent=pad(h);
-    document.getElementById('cd-m').textContent=pad(m); document.getElementById('cd-s').textContent=pad(s);
-    note.textContent='২৭ আগস্ট থেকে ১১ সেপ্টেম্বর, ২০২৬ পর্যন্ত কাউন্টডাউন চলছে';
-  }
-  tickCountdown(); setInterval(tickCountdown,1000);
 
+
+    const d =
+      Math.floor(diff / 86400000);
+
+    const h =
+      Math.floor(diff / 3600000) % 24;
+
+    const m =
+      Math.floor(diff / 60000) % 60;
+
+    const s =
+      Math.floor(diff / 1000) % 60;
+
+
+    document.getElementById('cd-d').textContent =
+      d;
+
+    document.getElementById('cd-h').textContent =
+      pad(h);
+
+    document.getElementById('cd-m').textContent =
+      pad(m);
+
+    document.getElementById('cd-s').textContent =
+      pad(s);
+
+
+    note.textContent =
+      'Countdown is running from August 27 to September 11, 2026.';
+  }
+
+
+  tickCountdown();
+
+  setInterval(
+    tickCountdown,
+    1000
+  );
+
+
+  // Update dashboard
   function update(category,count){
-    const sec=document.getElementById(category.toLowerCase()+'-secured');
-    const rem=document.getElementById(category.toLowerCase()+'-remain');
-    const bar=document.getElementById(category.toLowerCase()+'-bar');
-    sec.textContent=count; rem.textContent=Math.max(TARGET-count,0)+' remaining';
-    bar.style.width=Math.min(count/TARGET*100,100)+'%';
+
+    const sec =
+      document.getElementById(
+        category.toLowerCase() + '-secured'
+      );
+
+
+    const rem =
+      document.getElementById(
+        category.toLowerCase() + '-remain'
+      );
+
+
+    const bar =
+      document.getElementById(
+        category.toLowerCase() + '-bar'
+      );
+
+
+    // Maximum target is 10
+    count =
+      Math.min(
+        Math.max(count,0),
+        TARGET
+      );
+
+
+    sec.textContent =
+      count;
+
+
+    rem.textContent =
+      Math.max(
+        TARGET - count,
+        0
+      ) + ' remaining';
+
+
+    bar.style.width =
+      Math.min(
+        count / TARGET * 100,
+        100
+      ) + '%';
   }
 
+
+  // Load dashboard
   function loadDashboard(){
-    if(SCRIPT_URL.includes('PASTE_')) return;
-    const cb='dashboard_'+Date.now();
-    window[cb]=function(data){
-      update('B',Number(data.B||0)); update('C',Number(data.C||0));
-      delete window[cb]; script.remove();
-    };
-    const script=document.createElement('script');
-    script.id=cb; script.src=SCRIPT_URL+'?action=counts&callback='+cb;
-    script.onerror=function(){delete window[cb];script.remove()};
+
+    if(SCRIPT_URL.includes('PASTE_'))
+      return;
+
+
+    const cb =
+      'dashboard_' + Date.now();
+
+
+    window[cb] =
+      function(data){
+
+        update(
+          'B',
+          Number(data.B || 0)
+        );
+
+
+        update(
+          'C',
+          Number(data.C || 0)
+        );
+
+
+        delete window[cb];
+
+        script.remove();
+      };
+
+
+    const script =
+      document.createElement('script');
+
+
+    script.id = cb;
+
+
+    script.src =
+      SCRIPT_URL +
+      '?action=counts&callback=' +
+      cb;
+
+
+    script.onerror =
+      function(){
+
+        delete window[cb];
+
+        script.remove();
+
+      };
+
+
     document.body.appendChild(script);
   }
 
-  const form=document.createElement('form');
-  form.method='POST'; form.target='submitFrame'; form.style.display='none';
+
+  // Hidden form
+  const form =
+    document.createElement('form');
+
+
+  form.method = 'POST';
+
+  form.target = 'submitFrame';
+
+  form.style.display = 'none';
+
   document.body.appendChild(form);
 
-  document.getElementById('submit').addEventListener('click',function(){
-    const category=document.getElementById('category').value;
-    const name=document.getElementById('name').value.trim();
-    const mobile=document.getElementById('mobile').value.trim();
-    const err=document.getElementById('err'), success=document.getElementById('success'), btn=this;
-    err.style.display='none'; success.style.display='none';
 
-    if(SCRIPT_URL.includes('PASTE_')){err.textContent='প্রথমে Google Apps Script URL বসাতে হবে।';err.style.display='block';return}
-    if(!category){err.textContent='B-Category বা C-Category নির্বাচন করুন।';err.style.display='block';return}
-    if(name.length<2){err.textContent='সঠিক নাম লিখুন।';err.style.display='block';return}
-    if(!/^01[3-9]\d{8}$/.test(mobile.replace(/[\s-]/g,''))){err.textContent='সঠিক ১১ সংখ্যার বাংলাদেশি মোবাইল নম্বর দিন।';err.style.display='block';return}
+  // Submit sponsor information
+  document.getElementById('submit')
+    .addEventListener(
+      'click',
+      function(){
 
-    btn.disabled=true; btn.textContent='জমা হচ্ছে...';
+        const category =
+          document.getElementById(
+            'category'
+          ).value;
 
-    form.innerHTML='';
-    [['category',category],['name',name],['mobile',mobile],['source','public-page']].forEach(([k,v])=>{
-      const input=document.createElement('input'); input.name=k; input.value=v; form.appendChild(input);
-    });
-    form.action=SCRIPT_URL;
-    form.submit();
 
-    // The POST uses a hidden iframe, so the private sheet receives the data
-    // without exposing the sheet itself to visitors.
-    setTimeout(()=>{
-      success.style.display='block'; btn.disabled=false; btn.textContent='জমা হয়েছে ✓ আবার যোগ করুন';
-      document.getElementById('name').value=''; document.getElementById('mobile').value='';
-      setTimeout(()=>btn.textContent='আমি আগ্রহী — তথ্য জমা দিন',2000);
-      loadDashboard();
-    },900);
-  });
+        const name =
+          document.getElementById(
+            'name'
+          ).value.trim();
 
-  loadDashboard(); setInterval(loadDashboard,10000);
+
+        const mobile =
+          document.getElementById(
+            'mobile'
+          ).value.trim();
+
+
+        const err =
+          document.getElementById(
+            'err'
+          );
+
+
+        const success =
+          document.getElementById(
+            'success'
+          );
+
+
+        const btn = this;
+
+
+        err.style.display =
+          'none';
+
+
+        success.style.display =
+          'none';
+
+
+        if(SCRIPT_URL.includes('PASTE_')){
+
+          err.textContent =
+            'Please add the Google Apps Script URL first.';
+
+          err.style.display =
+            'block';
+
+          return;
+        }
+
+
+        if(!category){
+
+          err.textContent =
+            'Please select B-Category or C-Category.';
+
+          err.style.display =
+            'block';
+
+          return;
+        }
+
+
+        if(name.length < 2){
+
+          err.textContent =
+            'Please enter a valid name.';
+
+          err.style.display =
+            'block';
+
+          return;
+        }
+
+
+        if(
+          !/^01[3-9]\d{8}$/
+            .test(
+              mobile.replace(
+                /[\s-]/g,
+                ''
+              )
+            )
+        ){
+
+          err.textContent =
+            'Please enter a valid 11-digit Bangladeshi mobile number.';
+
+          err.style.display =
+            'block';
+
+          return;
+        }
+
+
+        btn.disabled =
+          true;
+
+
+        btn.textContent =
+          'Submitting...';
+
+
+        form.innerHTML =
+          '';
+
+
+        [
+          ['category',category],
+          ['name',name],
+          ['mobile',mobile],
+          ['source','public-page']
+        ].forEach(
+          ([k,v]) => {
+
+            const input =
+              document.createElement(
+                'input'
+              );
+
+            input.name =
+              k;
+
+            input.value =
+              v;
+
+            form.appendChild(
+              input
+            );
+
+          }
+        );
+
+
+        form.action =
+          SCRIPT_URL;
+
+
+        form.submit();
+
+
+        // Hidden iframe submission
+        setTimeout(
+          () => {
+
+            success.style.display =
+              'block';
+
+
+            btn.disabled =
+              false;
+
+
+            btn.textContent =
+              'Submitted ✓ Add Another Sponsor';
+
+
+            document.getElementById(
+              'name'
+            ).value =
+              '';
+
+
+            document.getElementById(
+              'mobile'
+            ).value =
+              '';
+
+
+            setTimeout(
+              () => {
+
+                btn.textContent =
+                  'I am interested — Submit Information';
+
+              },
+              2000
+            );
+
+
+            loadDashboard();
+
+          },
+          900
+        );
+
+      }
+    );
+
+
+  // Initial dashboard load
+  loadDashboard();
+
+
+  // Refresh dashboard every 10 seconds
+  setInterval(
+    loadDashboard,
+    10000
+  );
+
 </script>
+
 </body>
 </html>
